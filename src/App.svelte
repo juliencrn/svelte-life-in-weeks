@@ -1,6 +1,4 @@
-<script>
-	// TODO: Save the date in LS
-	// TODO: Then, add a link/button to set another date
+<script lang="ts">
 	import { dateOfBirth } from "./store";
 	import BdForm from "./BDForm.svelte";
 	import Grid from "./Grid.svelte";
@@ -8,6 +6,7 @@
 
 <main class="app">
 	{#if $dateOfBirth}
+		<button on:click={dateOfBirth.reset}>Reset date</button>
 		<Grid />
 	{:else}
 		<BdForm />
