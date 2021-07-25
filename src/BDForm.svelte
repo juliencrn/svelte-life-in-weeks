@@ -1,7 +1,5 @@
 <script>
-    import { createEventDispatcher } from "svelte";
-
-    const dispatch = createEventDispatcher();
+    import { dateOfBirth } from "./store";
     let value = ""; // Format: YYYY-MM-DD
 
     function handleSubmit() {
@@ -11,7 +9,7 @@
             return false;
         }
 
-        dispatch("message", value);
+        dateOfBirth.set(value);
     }
 </script>
 

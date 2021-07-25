@@ -1,21 +1,16 @@
 <script>
-	import BdForm from "./BDForm.svelte";
-	import Grid from "./Grid.svelte";
-
 	// TODO: Save the date in LS
 	// TODO: Then, add a link/button to set another date
-	let birthday = null;
-
-	function getBirthday(event) {
-		birthday = new Date(event.detail);
-	}
+	import { dateOfBirth } from "./store";
+	import BdForm from "./BDForm.svelte";
+	import Grid from "./Grid.svelte";
 </script>
 
 <main class="app">
-	{#if birthday}
-		<Grid {birthday} />
+	{#if $dateOfBirth}
+		<Grid />
 	{:else}
-		<BdForm on:message={getBirthday} />
+		<BdForm />
 	{/if}
 </main>
 

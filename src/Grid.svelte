@@ -1,20 +1,20 @@
 <script>
+    import { dateOfBirth } from "./store";
     import Checkbox from "./Checkbox.svelte";
+    import { weeksBetween, isValidDate } from "./utils";
 
-    export let birthday; //  = new Date(1993, 9, 18);
-
-    // TODO: How throw error is props date is invalid?
-    const years = 90;
-    const weeksByYear = 52;
-    const weekCount = weeksByYear * years;
+    // Grid of 90 years splitted in 52 weeks
+    const weekCount = 90 * 52;
     const today = new Date();
-    const pastWeekCount = weeksBetween(birthday, today);
-    const weeks = Array.from({ length: weekCount }).map((_, i) => ({
-        isPast: i < pastWeekCount,
-    }));
+    const fromDate = new Date($dateOfBirth);
+    let weeks = [];
+    let pastWeekCount = 0;
 
-    function weeksBetween(d1, d2) {
-        return (d2 - d1) / (7 * 24 * 60 * 60 * 1000);
+    if (isValidDate(fromDate)) {
+        pastWeekCount = weeksBetween(fromDate, today);
+        weeks = Array.from({ length: weekCount }).map((_, i) => ({
+            isPast: i < pastWeekCount,
+        }));
     }
 </script>
 
