@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
-import { isValidDate } from './utils';
-import * as localStorage from './localStorage'
+import { isValidDate } from './utils/utils';
+import * as localStorage from './utils/localStorage'
 
 const storedDateOfBirth = localStorage.readValue("dateOfBirth", null);
 
