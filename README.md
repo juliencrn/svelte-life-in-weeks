@@ -1,3 +1,22 @@
+<div align="center">
+<h1>Life in weeks</h1>
+
+My first project in Svelte, a mini web app who show you how many weeks you have lived and approximately how many you have left.
+
+<!-- Badges -->
+</div>
+
+![Screenshot of Life in weeks](screenshot.png)
+
+---
+
+This little front-end project has been built only for fun, to discover how work Svelte.js. It was ~~copied~~ strongly inspired by [4K WEEKS](https://4kweeks.com/). 
+Note: The site saves your birthday in your browser using LocalStorage to persist the week grid between sessions. Thank to that, you can add this page to your browser welcome page to keep focus.
+
+---
+
+## Below, default Svelte readme
+
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
