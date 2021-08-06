@@ -36,9 +36,9 @@
     }
 </script>
 
-<a href="#" role="button" class="link" on:click={dateOfBirth.reset}>
+<button role="button" class="link border-0" on:click={dateOfBirth.reset}>
     « Reset date
-</a>
+</button>
 
 <Header {livedWeeks} {totalWeeks} />
 
